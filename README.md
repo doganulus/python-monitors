@@ -2,9 +2,11 @@
 A pure Python package to monitor formal specifications over temporal sequences. Please see the project [Reelay](https://github.com/doganulus/reelay) for high-performance monitoring using C++ and other target platforms such as Robot Operating System (ROS).
 
 # Install
-The easiest way to install `monitors` is to run the following command (assuming `git` installed). 
+The latest release of the package can be installed via `pip` such that
 
-    pip install git+https://github.com/doganulus/python-monitors.git
+    pip install python-monitors
+
+This command will also install dependencies `python-intervals` and `antlr4-python3-runtime`.
 
 # Use
 
