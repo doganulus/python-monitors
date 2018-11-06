@@ -1,12 +1,14 @@
 # About python-monitors
- python-monitors` is a pure Python package to monitor formal specifications over temporal sequences. It supports several specification languages such as regular expressions and variants of temporal logic. The usage is fairly easy thanks to Python and allows fast prototyping of applications that monitor temporal sequences using these specifications. For high-performance monitoring tasks, please see the project [Reelay](https://github.com/doganulus/reelay) that targets C++ applications.
+ `python-monitors` is a pure Python package to monitor formal specifications over temporal sequences. It supports several specification languages such as regular expressions and variants of temporal logic. The usage is fairly easy thanks to Python and allows fast prototyping of applications that monitor temporal sequences using these specifications. For high-performance monitoring tasks, please see the project [Reelay](https://github.com/doganulus/reelay) that targets C++ applications.
 
 # Install
 The latest release of the package can be installed via `pip` such that
 
     pip install python-monitors
 
-This command will also install dependencies `python-intervals` and `antlr4-python3-runtime`.
+This command will also install dependencies `python-intervals` and `antlr4-python3-runtime`. Alternatively, you can install directly from this repository by running the command 
+
+    pip install git+https://github.com/doganulus/python-monitors.git 
 
 # Use
 
@@ -63,3 +65,7 @@ Regular expressions over propositions and predicates are available in a similar 
     for n in [1, 1, 1, 1, 13, 13, 14, 1, 1, 2]:
 	    output = my_reg_monitor.update(x = n)
 	    print(output, my_reg_monitor.states)
+
+# Cite
+For MTL monitoring algorithm, please cite [Online monitoring of Metric Temporal Logic using Sequential Networks](https://github.com/doganulus/reelay/blob/master/docs/mtl_monitoring.pdf)
+For RE monitoring algorithm, please cite [Sequential Circuits from Regular Expressions Revisited](https://github.com/doganulus/reelay/blob/master/docs/regex_monitoring.pdf)
