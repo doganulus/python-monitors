@@ -38,14 +38,15 @@ Then process a data sequence (over propositions) by updating the monitor and col
 
 Any Boolean-valued Python function can be used as a predicate in MTL formulas. They are passed to monitor construction via a dictionary as follows:
 
-	def p1(x):
+	def my_predicate(x):
 	    return x < 5
-     
-    my_mtl_monitor = mtl.monitor("always[0,5](p1(x))", ext_objects={'p1': p1})
+    
+    # Named parameters should share the same strings in the expression 
+    my_mtl_monitor = mtl.monitor("always[0,5](p(x))", p=my_predicate)
      
     for n in [9, 13, 4, 1, 2, 3,1,1,1,2]:
 	    output = my_mtl_monitor.update(x = n)
-	    print(my_mtl_monitor.time, p1(n), output, my_mtl_monitor.states)
+	    print(my_mtl_monitor.time, my_predicate(n), output, my_mtl_monitor.states)
 	
 
 ## Regular expressions over propositions and predicates
@@ -54,18 +55,18 @@ Regular expressions over propositions and predicates are available in a similar 
 
     from monitors import regexp
      
-    def p1(x):
+    def pred1(x):
         return x < 5
      
-    def p2(x):
+    def pred2(x):
 	    return x > 12
      
-    my_reg_monitor = regexp.monitor("True*; p1(x); p2(x)+; p1(x)+", ext_objects={'p1': p1, 'p2': p2}, print_source_code=True)
+	# Named parameters should share the same strings in the expression 
+    my_reg_monitor = regexp.monitor("True*; p1(x); p2(x)+; p1(x)+", p1=pred1, p2=pred2)
      
     for n in [1, 1, 1, 1, 13, 13, 14, 1, 1, 2]:
 	    output = my_reg_monitor.update(x = n)
 	    print(output, my_reg_monitor.states)
 
 # Cite
-For MTL monitoring algorithm, please cite [Online monitoring of Metric Temporal Logic using Sequential Networks](https://github.com/doganulus/reelay/blob/master/docs/mtl_monitoring.pdf)
-For RE monitoring algorithm, please cite [Sequential Circuits from Regular Expressions Revisited](https://github.com/doganulus/reelay/blob/master/docs/regex_monitoring.pdf)
+For MTL monitoring algorithm, please cite [Online Monitoring of Metric Temporal Logic using Sequential Networks](https://arxiv.org/abs/1901.00175). For RE monitoring algorithm, please cite [Sequential Circuits from Regular Expressions Revisited](https://arxiv.org/abs/1801.0897).

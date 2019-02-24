@@ -39,6 +39,11 @@ class PastMTLVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by PastMTLParser#Previously.
+    def visitPreviously(self, ctx:PastMTLParser.PreviouslyContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by PastMTLParser#TimedSinceInf.
     def visitTimedSinceInf(self, ctx:PastMTLParser.TimedSinceInfContext):
         return self.visitChildren(ctx)

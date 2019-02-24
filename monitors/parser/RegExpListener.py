@@ -17,6 +17,15 @@ class RegExpListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by RegExpParser#VarBind.
+    def enterVarBind(self, ctx:RegExpParser.VarBindContext):
+        pass
+
+    # Exit a parse tree produced by RegExpParser#VarBind.
+    def exitVarBind(self, ctx:RegExpParser.VarBindContext):
+        pass
+
+
     # Enter a parse tree produced by RegExpParser#Concat.
     def enterConcat(self, ctx:RegExpParser.ConcatContext):
         pass
@@ -26,12 +35,30 @@ class RegExpListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by RegExpParser#Intersection.
+    def enterIntersection(self, ctx:RegExpParser.IntersectionContext):
+        pass
+
+    # Exit a parse tree produced by RegExpParser#Intersection.
+    def exitIntersection(self, ctx:RegExpParser.IntersectionContext):
+        pass
+
+
     # Enter a parse tree produced by RegExpParser#Star.
     def enterStar(self, ctx:RegExpParser.StarContext):
         pass
 
     # Exit a parse tree produced by RegExpParser#Star.
     def exitStar(self, ctx:RegExpParser.StarContext):
+        pass
+
+
+    # Enter a parse tree produced by RegExpParser#Exists.
+    def enterExists(self, ctx:RegExpParser.ExistsContext):
+        pass
+
+    # Exit a parse tree produced by RegExpParser#Exists.
+    def exitExists(self, ctx:RegExpParser.ExistsContext):
         pass
 
 

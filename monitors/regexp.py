@@ -6,21 +6,7 @@ from monitors.parser.RegExpVisitor import RegExpVisitor
 
 import intervals
 
-class BaseMonitor:
-    def update_timed_since(self, now, state, left, right, lower, upper):
-        if left and right:
-            return (state & intervals.closed(self.time, intervals.inf)) | intervals.closed(self.time + lower, self.time + upper)
-        elif not left and right:
-            return intervals.closed(self.time + lower, self.time + upper)
-        elif left and not right:
-            return (state & intervals.closed(self.time, intervals.inf))
-        else:
-            return intervals.empty()
-
-    def output_timed(self, state):
-        return self.time in state
-
-def monitor(pattern, ext_objects=dict(), class_name=None, print_source_code=False):
+def monitor(pattern, **kwargs):
     "Compile a regular expression"
 
     lexer = RegExpLexer(InputStream(pattern))
@@ -38,13 +24,13 @@ def monitor(pattern, ext_objects=dict(), class_name=None, print_source_code=Fals
     builder = RegExpBuilder()
     builder.build(tree)
 
-    if class_name != None:
-        name = class_name
+    if 'classname' in kwargs:
+        classname = kwargs['classname']
     else:
-        name = builder.name
+        classname = builder.name
 
     statements = []
-    statements += ["class {class_name}: ".format(class_name=name)]
+    statements += ["class {classname}: ".format(classname=classname)]
     statements += [""]
     statements += ["\tstates = [{}]".format(", ".join([str(init) for init in builder.initialization]))]
     statements += ["\tprev_states = [{}]".format(", ".join([str(init) for init in builder.initialization]))]
@@ -56,17 +42,20 @@ def monitor(pattern, ext_objects=dict(), class_name=None, print_source_code=Fals
     statements += ["\t\t{}".format(statement) for statement in builder.statements]
     statements += [""]
     statements += ["\t\treturn {}".format(builder.output)]
-
+    statements += [""]
+    statements += ["\tdef output(self):"]
+    statements += ["\t\treturn {}".format(builder.output)]
+    
     source = '\n'.join(statements)
 
-    if print_source_code:
+    if ('print_source_code' in kwargs) and kwargs['print_source_code']:
         print(source)
 
     code = compile(source, "<string>", "exec")
 
-    exec(code, ext_objects)
+    exec(code, kwargs)
 
-    return ext_objects[name]()
+    return kwargs[classname]()
 
 
 class RegExpBuilder(RegExpVisitor):
@@ -222,6 +211,27 @@ class RegExpAnnotator(RegExpVisitor):
         ctx.nullable = ctx.child.nullable
         ctx.output = ctx.child.output
         ctx.position = ctx.child.position
+
+        return self.num, ctx.nullable, ctx.output
+
+    def visitVarBind(self, ctx:RegExpParser.VarBindContext):
+
+        self.visit(ctx.child)
+
+        ctx.nullable = ctx.child.nullable
+        ctx.output = ctx.child.output
+        ctx.position = ctx.child.position
+
+        return self.num, ctx.nullable, ctx.output
+
+    def visitExists(self, ctx:RegExpParser.ExistsContext):
+
+        self.visit(ctx.child)
+
+        ctx.nullable = ctx.child.nullable 
+        ctx.output = ctx.child.output
+
+        ctx.varnames = set(ctx.args.getText().split(','))
 
         return self.num, ctx.nullable, ctx.output
 

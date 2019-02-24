@@ -3,19 +3,26 @@ grammar PastMTL;
 namedExpr : (name=IDENTIFIER '=')? child=expr;
 
 expr : child=atom                                                   # Atomic
+
      | ('!' | 'not') child=expr                                     # Negation
      | left=expr ('&&' | 'and') right=expr                          # Conjunction           
      | left=expr ('||' | 'or') right=expr                           # Disjunction
      | left=expr ('->' | 'implies') right=expr                      # Implies
+
+     | 'pre' child=expr                                             # Previously
+
      | 'once' child=expr                                            # Once
      | 'once' '[' l=NUMBER ',' u=NUMBER ']' child=expr              # TimedOnce
      | 'once' '[' l=NUMBER ',' 'inf' ']' child=expr                 # TimedOnceInf
+
      | 'always' child=expr                                          # Always
      | 'always' '[' l=NUMBER ',' u=NUMBER ']' child=expr            # TimedAlways
      | 'always' '[' l=NUMBER ',' 'inf' ']' child=expr               # TimedAlwaysInf
+
      | left=expr 'since' right=expr                                 # Since
      | left=expr 'since' '[' l=NUMBER ',' u=NUMBER ']' right=expr   # TimedSince
      | left=expr 'since' '[' l=NUMBER ',' 'inf' ']' right=expr      # TimedSinceInf
+     
      | '(' child=expr ')'                                           # Grouping
      ;
 

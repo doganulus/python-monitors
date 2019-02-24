@@ -14,13 +14,28 @@ class RegExpVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by RegExpParser#VarBind.
+    def visitVarBind(self, ctx:RegExpParser.VarBindContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by RegExpParser#Concat.
     def visitConcat(self, ctx:RegExpParser.ConcatContext):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by RegExpParser#Intersection.
+    def visitIntersection(self, ctx:RegExpParser.IntersectionContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by RegExpParser#Star.
     def visitStar(self, ctx:RegExpParser.StarContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by RegExpParser#Exists.
+    def visitExists(self, ctx:RegExpParser.ExistsContext):
         return self.visitChildren(ctx)
 
 

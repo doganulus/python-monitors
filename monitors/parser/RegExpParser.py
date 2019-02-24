@@ -7,28 +7,32 @@ import sys
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\17")
-        buf.write("=\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\3\2\3\2\5\2\r\n\2\3")
-        buf.write("\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3\32\n\3")
-        buf.write("\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\7\3(")
-        buf.write("\n\3\f\3\16\3+\13\3\3\4\3\4\3\4\3\4\3\4\3\4\5\4\63\n\4")
-        buf.write("\3\5\3\5\3\5\7\58\n\5\f\5\16\5;\13\5\3\5\2\3\4\6\2\4\6")
-        buf.write("\b\2\2\2C\2\f\3\2\2\2\4\31\3\2\2\2\6\62\3\2\2\2\b\64\3")
-        buf.write("\2\2\2\n\13\7\16\2\2\13\r\7\3\2\2\f\n\3\2\2\2\f\r\3\2")
-        buf.write("\2\2\r\16\3\2\2\2\16\17\5\4\3\2\17\3\3\2\2\2\20\21\b\3")
-        buf.write("\1\2\21\32\7\4\2\2\22\32\5\6\4\2\23\24\7\5\2\2\24\32\5")
-        buf.write("\6\4\2\25\26\7\13\2\2\26\27\5\4\3\2\27\30\7\f\2\2\30\32")
-        buf.write("\3\2\2\2\31\20\3\2\2\2\31\22\3\2\2\2\31\23\3\2\2\2\31")
-        buf.write("\25\3\2\2\2\32)\3\2\2\2\33\34\f\5\2\2\34\35\7\t\2\2\35")
-        buf.write("(\5\4\3\6\36\37\f\4\2\2\37 \7\n\2\2 (\5\4\3\5!\"\f\b\2")
-        buf.write("\2\"(\7\6\2\2#$\f\7\2\2$(\7\7\2\2%&\f\6\2\2&(\7\b\2\2")
-        buf.write("\'\33\3\2\2\2\'\36\3\2\2\2\'!\3\2\2\2\'#\3\2\2\2\'%\3")
-        buf.write("\2\2\2(+\3\2\2\2)\'\3\2\2\2)*\3\2\2\2*\5\3\2\2\2+)\3\2")
-        buf.write("\2\2,\63\7\16\2\2-.\7\16\2\2./\7\13\2\2/\60\5\b\5\2\60")
-        buf.write("\61\7\f\2\2\61\63\3\2\2\2\62,\3\2\2\2\62-\3\2\2\2\63\7")
-        buf.write("\3\2\2\2\649\7\16\2\2\65\66\7\r\2\2\668\7\16\2\2\67\65")
-        buf.write("\3\2\2\28;\3\2\2\29\67\3\2\2\29:\3\2\2\2:\t\3\2\2\2;9")
-        buf.write("\3\2\2\2\b\f\31\')\629")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\25")
+        buf.write("I\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\3\2\3\2\5\2\r\n\2\3")
+        buf.write("\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3")
+        buf.write("\3\3\3\3\3\3\3\3\3\3\3\3\5\3#\n\3\3\3\3\3\3\3\3\3\3\3")
+        buf.write("\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\7\3\64\n\3\f")
+        buf.write("\3\16\3\67\13\3\3\4\3\4\3\4\3\4\3\4\3\4\5\4?\n\4\3\5\3")
+        buf.write("\5\3\5\7\5D\n\5\f\5\16\5G\13\5\3\5\2\3\4\6\2\4\6\b\2\2")
+        buf.write("\2R\2\f\3\2\2\2\4\"\3\2\2\2\6>\3\2\2\2\b@\3\2\2\2\n\13")
+        buf.write("\7\23\2\2\13\r\7\3\2\2\f\n\3\2\2\2\f\r\3\2\2\2\r\16\3")
+        buf.write("\2\2\2\16\17\5\4\3\2\17\3\3\2\2\2\20\21\b\3\1\2\21#\7")
+        buf.write("\4\2\2\22#\5\6\4\2\23\24\7\5\2\2\24#\5\6\4\2\25\26\7\23")
+        buf.write("\2\2\26\27\7\6\2\2\27#\5\6\4\2\30\31\7\7\2\2\31\32\7\b")
+        buf.write("\2\2\32\33\5\b\5\2\33\34\7\t\2\2\34\35\5\4\3\n\35#\3\2")
+        buf.write("\2\2\36\37\7\20\2\2\37 \5\4\3\2 !\7\21\2\2!#\3\2\2\2\"")
+        buf.write("\20\3\2\2\2\"\22\3\2\2\2\"\23\3\2\2\2\"\25\3\2\2\2\"\30")
+        buf.write("\3\2\2\2\"\36\3\2\2\2#\65\3\2\2\2$%\f\6\2\2%&\7\r\2\2")
+        buf.write("&\64\5\4\3\7\'(\f\5\2\2()\7\16\2\2)\64\5\4\3\6*+\f\4\2")
+        buf.write("\2+,\7\17\2\2,\64\5\4\3\5-.\f\t\2\2.\64\7\n\2\2/\60\f")
+        buf.write("\b\2\2\60\64\7\13\2\2\61\62\f\7\2\2\62\64\7\f\2\2\63$")
+        buf.write("\3\2\2\2\63\'\3\2\2\2\63*\3\2\2\2\63-\3\2\2\2\63/\3\2")
+        buf.write("\2\2\63\61\3\2\2\2\64\67\3\2\2\2\65\63\3\2\2\2\65\66\3")
+        buf.write("\2\2\2\66\5\3\2\2\2\67\65\3\2\2\28?\7\23\2\29:\7\23\2")
+        buf.write("\2:;\7\20\2\2;<\5\b\5\2<=\7\21\2\2=?\3\2\2\2>8\3\2\2\2")
+        buf.write(">9\3\2\2\2?\7\3\2\2\2@E\7\23\2\2AB\7\22\2\2BD\7\23\2\2")
+        buf.write("CA\3\2\2\2DG\3\2\2\2EC\3\2\2\2EF\3\2\2\2F\t\3\2\2\2GE")
+        buf.write("\3\2\2\2\b\f\"\63\65>E")
         return buf.getvalue()
 
 
@@ -42,13 +46,15 @@ class RegExpParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "'='", "'True'", "'!'", "'*'", "'+'", 
-                     "'?'", "';'", "'|'", "'('", "')'", "','" ]
+    literalNames = [ "<INVALID>", "'='", "'True'", "'!'", "'<='", "'exists'", 
+                     "'{'", "'}'", "'*'", "'+'", "'?'", "';'", "'&'", "'|'", 
+                     "'('", "')'", "','" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "IDENTIFIER", "WS" ]
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "IDENTIFIER", "NUMBER", "WS" ]
 
     RULE_namedExpr = 0
     RULE_expr = 1
@@ -69,8 +75,14 @@ class RegExpParser ( Parser ):
     T__8=9
     T__9=10
     T__10=11
-    IDENTIFIER=12
-    WS=13
+    T__11=12
+    T__12=13
+    T__13=14
+    T__14=15
+    T__15=16
+    IDENTIFIER=17
+    NUMBER=18
+    WS=19
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -156,6 +168,35 @@ class RegExpParser ( Parser ):
             super().copyFrom(ctx)
 
 
+    class VarBindContext(ExprContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a RegExpParser.ExprContext
+            super().__init__(parser)
+            self.var = None # Token
+            self.child = None # AtomContext
+            self.copyFrom(ctx)
+
+        def IDENTIFIER(self):
+            return self.getToken(RegExpParser.IDENTIFIER, 0)
+        def atom(self):
+            return self.getTypedRuleContext(RegExpParser.AtomContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterVarBind" ):
+                listener.enterVarBind(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitVarBind" ):
+                listener.exitVarBind(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitVarBind" ):
+                return visitor.visitVarBind(self)
+            else:
+                return visitor.visitChildren(self)
+
+
     class ConcatContext(ExprContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a RegExpParser.ExprContext
@@ -186,6 +227,36 @@ class RegExpParser ( Parser ):
                 return visitor.visitChildren(self)
 
 
+    class IntersectionContext(ExprContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a RegExpParser.ExprContext
+            super().__init__(parser)
+            self.left = None # ExprContext
+            self.right = None # ExprContext
+            self.copyFrom(ctx)
+
+        def expr(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(RegExpParser.ExprContext)
+            else:
+                return self.getTypedRuleContext(RegExpParser.ExprContext,i)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterIntersection" ):
+                listener.enterIntersection(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitIntersection" ):
+                listener.exitIntersection(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIntersection" ):
+                return visitor.visitIntersection(self)
+            else:
+                return visitor.visitChildren(self)
+
+
     class StarContext(ExprContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a RegExpParser.ExprContext
@@ -208,6 +279,36 @@ class RegExpParser ( Parser ):
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitStar" ):
                 return visitor.visitStar(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class ExistsContext(ExprContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a RegExpParser.ExprContext
+            super().__init__(parser)
+            self.args = None # IdlistContext
+            self.child = None # ExprContext
+            self.copyFrom(ctx)
+
+        def idlist(self):
+            return self.getTypedRuleContext(RegExpParser.IdlistContext,0)
+
+        def expr(self):
+            return self.getTypedRuleContext(RegExpParser.ExprContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExists" ):
+                listener.enterExists(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExists" ):
+                listener.exitExists(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExists" ):
+                return visitor.visitExists(self)
             else:
                 return visitor.visitChildren(self)
 
@@ -404,10 +505,10 @@ class RegExpParser ( Parser ):
         self.enterRecursionRule(localctx, 2, self.RULE_expr, _p)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 23
+            self.state = 32
             self._errHandler.sync(self)
-            token = self._input.LA(1)
-            if token in [RegExpParser.T__1]:
+            la_ = self._interp.adaptivePredict(self._input,1,self._ctx)
+            if la_ == 1:
                 localctx = RegExpParser.TrueContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
@@ -415,14 +516,16 @@ class RegExpParser ( Parser ):
                 self.state = 15
                 self.match(RegExpParser.T__1)
                 pass
-            elif token in [RegExpParser.IDENTIFIER]:
+
+            elif la_ == 2:
                 localctx = RegExpParser.AtomicContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
                 self.state = 16
                 localctx.child = self.atom()
                 pass
-            elif token in [RegExpParser.T__2]:
+
+            elif la_ == 3:
                 localctx = RegExpParser.NegAtomicContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
@@ -431,22 +534,50 @@ class RegExpParser ( Parser ):
                 self.state = 18
                 localctx.child = self.atom()
                 pass
-            elif token in [RegExpParser.T__8]:
-                localctx = RegExpParser.GroupingContext(self, localctx)
+
+            elif la_ == 4:
+                localctx = RegExpParser.VarBindContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
                 self.state = 19
-                self.match(RegExpParser.T__8)
+                localctx.var = self.match(RegExpParser.IDENTIFIER)
                 self.state = 20
-                localctx.child = self.expr(0)
+                self.match(RegExpParser.T__3)
                 self.state = 21
-                self.match(RegExpParser.T__9)
+                localctx.child = self.atom()
                 pass
-            else:
-                raise NoViableAltException(self)
+
+            elif la_ == 5:
+                localctx = RegExpParser.ExistsContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+                self.state = 22
+                self.match(RegExpParser.T__4)
+                self.state = 23
+                self.match(RegExpParser.T__5)
+                self.state = 24
+                localctx.args = self.idlist()
+                self.state = 25
+                self.match(RegExpParser.T__6)
+                self.state = 26
+                localctx.child = self.expr(8)
+                pass
+
+            elif la_ == 6:
+                localctx = RegExpParser.GroupingContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+                self.state = 28
+                self.match(RegExpParser.T__13)
+                self.state = 29
+                localctx.child = self.expr(0)
+                self.state = 30
+                self.match(RegExpParser.T__14)
+                pass
+
 
             self._ctx.stop = self._input.LT(-1)
-            self.state = 39
+            self.state = 51
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,3,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -454,75 +585,89 @@ class RegExpParser ( Parser ):
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    self.state = 37
+                    self.state = 49
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
                     if la_ == 1:
                         localctx = RegExpParser.ConcatContext(self, RegExpParser.ExprContext(self, _parentctx, _parentState))
                         localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 25
-                        if not self.precpred(self._ctx, 3):
-                            from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
-                        self.state = 26
-                        self.match(RegExpParser.T__6)
-                        self.state = 27
-                        localctx.right = self.expr(4)
-                        pass
-
-                    elif la_ == 2:
-                        localctx = RegExpParser.UnionContext(self, RegExpParser.ExprContext(self, _parentctx, _parentState))
-                        localctx.left = _prevctx
-                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 28
-                        if not self.precpred(self._ctx, 2):
-                            from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
-                        self.state = 29
-                        self.match(RegExpParser.T__7)
-                        self.state = 30
-                        localctx.right = self.expr(3)
-                        pass
-
-                    elif la_ == 3:
-                        localctx = RegExpParser.StarContext(self, RegExpParser.ExprContext(self, _parentctx, _parentState))
-                        localctx.child = _prevctx
-                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 31
-                        if not self.precpred(self._ctx, 6):
-                            from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 6)")
-                        self.state = 32
-                        self.match(RegExpParser.T__3)
-                        pass
-
-                    elif la_ == 4:
-                        localctx = RegExpParser.PlusContext(self, RegExpParser.ExprContext(self, _parentctx, _parentState))
-                        localctx.child = _prevctx
-                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 33
-                        if not self.precpred(self._ctx, 5):
-                            from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 5)")
                         self.state = 34
-                        self.match(RegExpParser.T__4)
-                        pass
-
-                    elif la_ == 5:
-                        localctx = RegExpParser.QuestionContext(self, RegExpParser.ExprContext(self, _parentctx, _parentState))
-                        localctx.child = _prevctx
-                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 35
                         if not self.precpred(self._ctx, 4):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 4)")
+                        self.state = 35
+                        self.match(RegExpParser.T__10)
                         self.state = 36
-                        self.match(RegExpParser.T__5)
+                        localctx.right = self.expr(5)
+                        pass
+
+                    elif la_ == 2:
+                        localctx = RegExpParser.IntersectionContext(self, RegExpParser.ExprContext(self, _parentctx, _parentState))
+                        localctx.left = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
+                        self.state = 37
+                        if not self.precpred(self._ctx, 3):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
+                        self.state = 38
+                        self.match(RegExpParser.T__11)
+                        self.state = 39
+                        localctx.right = self.expr(4)
+                        pass
+
+                    elif la_ == 3:
+                        localctx = RegExpParser.UnionContext(self, RegExpParser.ExprContext(self, _parentctx, _parentState))
+                        localctx.left = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
+                        self.state = 40
+                        if not self.precpred(self._ctx, 2):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
+                        self.state = 41
+                        self.match(RegExpParser.T__12)
+                        self.state = 42
+                        localctx.right = self.expr(3)
+                        pass
+
+                    elif la_ == 4:
+                        localctx = RegExpParser.StarContext(self, RegExpParser.ExprContext(self, _parentctx, _parentState))
+                        localctx.child = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
+                        self.state = 43
+                        if not self.precpred(self._ctx, 7):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 7)")
+                        self.state = 44
+                        self.match(RegExpParser.T__7)
+                        pass
+
+                    elif la_ == 5:
+                        localctx = RegExpParser.PlusContext(self, RegExpParser.ExprContext(self, _parentctx, _parentState))
+                        localctx.child = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
+                        self.state = 45
+                        if not self.precpred(self._ctx, 6):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 6)")
+                        self.state = 46
+                        self.match(RegExpParser.T__8)
+                        pass
+
+                    elif la_ == 6:
+                        localctx = RegExpParser.QuestionContext(self, RegExpParser.ExprContext(self, _parentctx, _parentState))
+                        localctx.child = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
+                        self.state = 47
+                        if not self.precpred(self._ctx, 5):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 5)")
+                        self.state = 48
+                        self.match(RegExpParser.T__9)
                         pass
 
              
-                self.state = 41
+                self.state = 53
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,3,self._ctx)
 
@@ -610,27 +755,27 @@ class RegExpParser ( Parser ):
         localctx = RegExpParser.AtomContext(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_atom)
         try:
-            self.state = 48
+            self.state = 60
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,4,self._ctx)
             if la_ == 1:
                 localctx = RegExpParser.PropContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
-                self.state = 42
+                self.state = 54
                 localctx.name = self.match(RegExpParser.IDENTIFIER)
                 pass
 
             elif la_ == 2:
                 localctx = RegExpParser.PredContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
-                self.state = 43
+                self.state = 55
                 localctx.name = self.match(RegExpParser.IDENTIFIER)
-                self.state = 44
-                self.match(RegExpParser.T__8)
-                self.state = 45
+                self.state = 56
+                self.match(RegExpParser.T__13)
+                self.state = 57
                 localctx.args = self.idlist()
-                self.state = 46
-                self.match(RegExpParser.T__9)
+                self.state = 58
+                self.match(RegExpParser.T__14)
                 pass
 
 
@@ -682,17 +827,17 @@ class RegExpParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 50
+            self.state = 62
             localctx.param = self.match(RegExpParser.IDENTIFIER)
-            self.state = 55
+            self.state = 67
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==RegExpParser.T__10:
-                self.state = 51
-                self.match(RegExpParser.T__10)
-                self.state = 52
+            while _la==RegExpParser.T__15:
+                self.state = 63
+                self.match(RegExpParser.T__15)
+                self.state = 64
                 localctx.param = self.match(RegExpParser.IDENTIFIER)
-                self.state = 57
+                self.state = 69
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -718,23 +863,27 @@ class RegExpParser ( Parser ):
 
     def expr_sempred(self, localctx:ExprContext, predIndex:int):
             if predIndex == 0:
-                return self.precpred(self._ctx, 3)
+                return self.precpred(self._ctx, 4)
          
 
             if predIndex == 1:
-                return self.precpred(self._ctx, 2)
+                return self.precpred(self._ctx, 3)
          
 
             if predIndex == 2:
-                return self.precpred(self._ctx, 6)
+                return self.precpred(self._ctx, 2)
          
 
             if predIndex == 3:
-                return self.precpred(self._ctx, 5)
+                return self.precpred(self._ctx, 7)
          
 
             if predIndex == 4:
-                return self.precpred(self._ctx, 4)
+                return self.precpred(self._ctx, 6)
+         
+
+            if predIndex == 5:
+                return self.precpred(self._ctx, 5)
          
 
 

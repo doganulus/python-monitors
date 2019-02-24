@@ -5,8 +5,6 @@ from distutils import util
 
 if __name__ == "__main__":
 
-    path_to_parser = util.convert_path('monitors/parser')
-
     setup ( name = 'python-monitors',
             version='0.1',
             author='Dogan Ulus',

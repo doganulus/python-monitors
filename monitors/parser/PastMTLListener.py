@@ -62,6 +62,15 @@ class PastMTLListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PastMTLParser#Previously.
+    def enterPreviously(self, ctx:PastMTLParser.PreviouslyContext):
+        pass
+
+    # Exit a parse tree produced by PastMTLParser#Previously.
+    def exitPreviously(self, ctx:PastMTLParser.PreviouslyContext):
+        pass
+
+
     # Enter a parse tree produced by PastMTLParser#TimedSinceInf.
     def enterTimedSinceInf(self, ctx:PastMTLParser.TimedSinceInfContext):
         pass

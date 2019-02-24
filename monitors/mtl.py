@@ -31,7 +31,7 @@ class BaseMonitor:
         return self.time in state
 
 
-def monitor(pattern, ext_objects=dict(), class_name=None, print_source_code=False):
+def monitor(pattern, **kwargs):
         
     "Compile a past linear-time temporal logic formula"
 
@@ -46,20 +46,20 @@ def monitor(pattern, ext_objects=dict(), class_name=None, print_source_code=Fals
     builder = PastMTLBuilder()
     init, update_stmt, output = builder.build(tree)
 
-    if class_name != None:
-        name = class_name
+    if 'classname' in kwargs:
+        classname = kwargs['classname']
     else:
-        name = builder.name
+        classname = builder.name
 
     statements = []
     statements += ["import intervals"]
     statements += ["from monitors.mtl import BaseMonitor"]
     statements += [""]
-    statements += ["class {class_name}(BaseMonitor):".format(class_name=name)]
+    statements += ["class {classname}(BaseMonitor):".format(classname=classname)]
     statements += [""]
     statements += ["\ttime = -1"]
     statements += ["\tstates = [{}]".format(", ".join([str(init) for init in builder.initialization]))]
-    # statements += ["\tprev_states = [{}]".format(", ".join([str(init) for init in builder.initialization]))]
+    # statements += ["\tpre_states = [{}]".format(", ".join([str(init) for init in builder.initialization]))]
     statements += [""]
     statements += ["\tdef update(self, **kwargs):"]
     statements += [""]
@@ -67,28 +67,19 @@ def monitor(pattern, ext_objects=dict(), class_name=None, print_source_code=Fals
     statements += ["\t\t{}".format(statement) for statement in update_stmt]
     statements += [""]
     statements += ["\t\treturn {}".format(builder.output)]
+    statements += [""]
+    statements += ["\tdef output(self):"]
+    statements += ["\t\treturn {}".format(builder.output)]
 
     source = '\n'.join(statements)
 
-    if print_source_code:
+    if ('print_source_code' in kwargs) and kwargs['print_source_code']:
         print(source)
 
     code = compile(source, "<string>", "exec")
+    exec(code, kwargs)
 
-    exec(code, ext_objects)
-
-    return ext_objects[name]()
-
-    # data = []
-    # for letter in df.itertuples():
-    #     exec(machine, globals(), {**local_dict, **locals()})
-    #     prev_states = np.copy(states)
-    #     data.append(output[0])
-    #     # print(states[0] == db.const(False))
-
-    # new_frame = pd.DataFrame(columns=[builder.name], data=data)
-
-
+    return kwargs[classname]()
 
 
 class PastMTLBuilder(PastMTLVisitor):
@@ -171,6 +162,19 @@ class PastMTLBuilder(PastMTLVisitor):
         self.num = self.num + 1 
 
         return label
+
+    def visitPreviously(self, ctx:PastMTLParser.PreviouslyContext):
+        child = self.visit(ctx.child)
+        label = "self.states[{}]".format(self.num)
+
+        min_val = 1
+        max_val = 1
+
+        self.initialization.append("intervals.empty()")
+        self.statements.append("{label} = self.update_timed_since(self.time, {label}, True, {right}, {min_val}, {max_val})".format(label=label, right=child, min_val=min_val, max_val=max_val)) 
+        self.num = self.num + 1
+
+        return "self.output_timed({})".format(label)
 
     def visitSince(self, ctx:PastMTLParser.SinceContext):
         left = self.visit(ctx.left)
