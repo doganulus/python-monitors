@@ -69,4 +69,4 @@ Regular expressions over propositions and predicates are available in a similar 
 	    print(output, my_reg_monitor.states)
 
 # Cite
-For MTL monitoring algorithm, please cite [Online Monitoring of Metric Temporal Logic using Sequential Networks](https://arxiv.org/abs/1901.00175). For RE monitoring algorithm, please cite [Sequential Circuits from Regular Expressions Revisited](https://arxiv.org/abs/1801.0897).
+For MTL monitoring algorithm, please cite [Online Monitoring of Metric Temporal Logic using Sequential Networks](https://arxiv.org/abs/1901.00175). For RE monitoring algorithm, please cite [Sequential Circuits from Regular Expressions Revisited](https://arxiv.org/abs/1801.08979).

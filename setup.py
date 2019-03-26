@@ -6,7 +6,7 @@ from distutils import util
 if __name__ == "__main__":
 
     setup ( name = 'python-monitors',
-            version='0.1',
+            version='0.1.1',
             author='Dogan Ulus',
             author_email='doganulus@gmail.com',
             url='http://github.com/doganulus/python-monitors/',
