@@ -1,5 +1,8 @@
 # About python-monitors
- `python-monitors` is a pure Python package to monitor formal specifications over temporal sequences. It supports several specification languages such as regular expressions and variants of temporal logic. The usage is fairly easy thanks to Python and allows fast prototyping of applications that monitor temporal sequences using these specifications. For high-performance monitoring tasks, please see the project [Reelay](https://github.com/doganulus/reelay) that targets C++ applications.
+ `python-monitors` is a pure Python package to monitor formal specifications over temporal sequences. It supports several specification languages such as regular expressions and variants of temporal logic. The usage is fairly easy thanks to Python and allows fast prototyping of applications that monitor temporal sequences using these specifications. 
+ 
+> **WARNING**: This repository is depreciated in favor of the project [Reelay](https://github.com/doganulus/reelay) but will remain as a pure Python solution albeit limited in functionatity and speed. Reelay implements the same runtime monitors and more in C++, which are accessible from Python via bindings.
+     
 
 # Install
 The latest release of the package can be installed via `pip` such that
